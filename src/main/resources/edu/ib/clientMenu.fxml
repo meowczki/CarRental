@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ib.ClientRentOrReturnController">
+   <children>
+      <Button fx:id="rentBtn" layoutX="96.0" layoutY="88.0" mnemonicParsing="false" onAction="#rentOnClick" prefHeight="53.0" prefWidth="223.0" text="WYPOŻYCZ" />
+      <Button fx:id="returnCarBtn" layoutX="96.0" layoutY="159.0" mnemonicParsing="false" onAction="#returnCarBtnOnClick" prefHeight="53.0" prefWidth="223.0" text="ODDAJ" />
+      <Button fx:id="returnBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnBtnOnClick" text="wróć" />
+   </children>
+</AnchorPane>

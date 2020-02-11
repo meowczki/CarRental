@@ -1,0 +1,112 @@
+package edu.ib.dbClasses;
+
+import edu.ib.CachedRowSetWrapper;
+import javafx.scene.control.TextArea;
+import java.sql.*;
+import javax.sql.rowset.CachedRowSet;
+
+
+public class DBUtilClient {
+
+
+
+    private Connection conn = null;
+
+
+
+    public void dbConnect() throws SQLException, ClassNotFoundException {
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+        try {
+            conn = DriverManager.getConnection(createURL());//polacznie z baza
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw e;
+        }
+
+    }
+
+    public void dbDisconnect() throws SQLException {
+
+        try {
+
+            if (conn != null && !conn.isClosed()) {
+
+                conn.close();
+
+            }
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+
+    private String createURL() {
+
+        StringBuilder urlSB = new StringBuilder("jdbc:mysql://");
+        urlSB.append("localhost:3306/");
+        urlSB.append("carrental?");
+        urlSB.append("useUnicode=true&characterEncoding=utf-8");
+        urlSB.append("&user=client");
+        urlSB.append("&password=password123");
+        urlSB.append("&serverTimezone=CET");
+
+        return urlSB.toString();
+    }
+
+    public ResultSet dbExecuteQuery(String queryStmt) throws SQLException, ClassNotFoundException {
+
+        PreparedStatement stmt = null;
+        ResultSet resultSet = null;
+        CachedRowSet crs;
+
+        try {
+
+            dbConnect();
+
+            stmt = conn.prepareStatement(queryStmt);
+
+            resultSet = stmt.executeQuery(queryStmt);
+
+            crs = new CachedRowSetWrapper();
+
+            crs.populate(resultSet);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            if (resultSet != null) {
+                resultSet.close();
+            }
+            if (stmt != null) {
+                stmt.close();
+            }
+            dbDisconnect();
+        }
+
+        return crs;
+    }
+
+    public  void dbExecuteUpdate(String sqlStmt) throws SQLException, ClassNotFoundException {
+
+        Statement stmt = null;
+        try {
+            dbConnect();
+            stmt = conn.createStatement();
+            stmt.executeUpdate(sqlStmt);
+
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+            dbDisconnect();
+        }
+    }
+
+}

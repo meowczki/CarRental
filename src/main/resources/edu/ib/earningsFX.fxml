@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ib.EarningsController">
+   <children>
+      <ComboBox fx:id="datesCombo" layoutX="186.0" layoutY="62.0" prefHeight="26.0" prefWidth="228.0" />
+      <Button fx:id="showBtn" layoutX="250.0" layoutY="129.0" mnemonicParsing="false" onAction="#showOnClick" prefHeight="39.0" prefWidth="103.0" text="Wyświetl" />
+      <TextField fx:id="earningsTV" layoutX="215.0" layoutY="209.0" />
+      <Button fx:id="returnBtn" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#returnBtnOnClick" text="wróć" />
+   </children>
+</AnchorPane>

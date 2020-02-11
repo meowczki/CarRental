@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ib.AdminMenuController">
+   <children>
+      <Button fx:id="rentalsBtn" layoutX="144.0" layoutY="28.0" mnemonicParsing="false" onAction="#rentalsBtnOnClick" prefHeight="94.0" prefWidth="306.0" text="Wypożyczenia" />
+      <Button fx:id="batteryBtn" layoutX="147.0" layoutY="137.0" mnemonicParsing="false" onAction="#batteryBtnOnClick" prefHeight="117.0" prefWidth="306.0" text="Stany baterii" />
+      <Button fx:id="earningsBtn" layoutX="144.0" layoutY="273.0" mnemonicParsing="false" onAction="#earningsBtnOnClick" prefHeight="94.0" prefWidth="306.0" text="Utarg" />
+      <Button fx:id="returnBtn" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onAction="#returnOnClick" text="wróć" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.ib.RegisterFX">
+    <children>
+        <Button fx:id="returnBtn" layoutX="14.0" layoutY="16.0" mnemonicParsing="false" onAction="#returnOnClick" text="Wróć" />
+        <TextField fx:id="emailTV" layoutX="114.0" layoutY="89.0" />
+        <Label layoutX="184.0" layoutY="57.0" text="email" />
+        <Label layoutX="183.0" layoutY="128.0" text="hasło" />
+        <TextField fx:id="passwordTV" layoutX="117.0" layoutY="156.0" />
+        <Button fx:id="registerBtn" layoutX="155.0" layoutY="261.0" mnemonicParsing="false" onAction="#registerOnClick" prefHeight="16.0" prefWidth="91.0" text="Rejestracja" />
+      <TextField fx:id="nameTV" layoutX="116.0" layoutY="26.0" />
+      <Label layoutX="148.0" layoutY="6.0" text="Imię i nazwisko:" />
+      <Label layoutX="157.0" layoutY="197.0" text="powtórz hasło" />
+      <TextField fx:id="repeatPasswordTV" layoutX="117.0" layoutY="221.0" />
+    </children>
+</AnchorPane>
